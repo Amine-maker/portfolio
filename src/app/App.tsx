@@ -1,12 +1,7 @@
-import React from "react";
+import React, { PropsWithChildren } from "react";
 
-function App() {
-  return (
-    <>
-      <div>tezst</div>
-    </>
-  );
-}
+const App: React.FC<PropsWithChildren> = () => {
+  return <></>;
+};
 
 export default App;
-
