@@ -22,6 +22,10 @@ export default {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      boxShadow: {
+        light:
+          "0 6px 16px -8px #3d1c0814, 0 4px 12px -6px #47260b0f, 0 3px 8px -4px #47220b0f, 0 2px 6px -3px #471a0b0a, 0 1px 4px -2px rgb(71 36 11 / 3%), 0 1px 3px -1px #47210b05, 0 1px 2px 0 #47290b03, inset 0 -1px 0 1px #b5520b3d, inset 0 1px 2px -1px #ffffff52",
+      },
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
@@ -47,6 +51,7 @@ export default {
           700: "hsl(var(--primary-700))",
           800: "hsl(var(--primary-800))",
           900: "hsl(var(--primary-900))",
+          vibrant: "hsl(var(--primary-vibrant))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -94,4 +99,3 @@ export default {
     "prettier-plugin-tailwindcss",
   ],
 };
-

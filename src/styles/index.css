@@ -47,8 +47,9 @@ body {
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: 2.2em;
+  font-weight: bold;
+  line-height: 1.3;
 }
 
 button {
@@ -106,6 +107,7 @@ button:focus-visible {
     --primary-700: 175, 13%, 32%;
     --primary-800: 173, 17%, 29%;
     --primary-900: 173, 21%, 24%;
+    --primary-vibrant: 142, 97%, 27%;
     --primary-foreground: 0 0% 98%;
 
     --secondary: 0 0% 96.1%;
@@ -157,11 +159,6 @@ button:focus-visible {
     --border: 0 0% 14.9%;
     --input: 0 0% 14.9%;
     --ring: 0 0% 83.1%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
   }
 }
 
@@ -172,8 +169,14 @@ button:focus-visible {
   body {
     @apply bg-background text-foreground;
   }
+
+  h1 {
+    @apply text-secondary-700;
+  }
 }
 
 @layer utilities {
+  .ocapiat-primary-color {
+    color: #de6215;
+  }
 }
-
