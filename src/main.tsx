@@ -2,6 +2,7 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router";
 import "./styles/index.css";
 import "./styles/reset.css";
+import "./styles/variable.css";
 import { AppRoutes } from "./app/AppRouting.tsx";
 import App from "./app/App.tsx";
 
