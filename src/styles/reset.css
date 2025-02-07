@@ -8,6 +8,8 @@
 /* 2. Remove default margin */
 * {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -66,4 +68,3 @@ h6 {
 #__next {
   isolation: isolate;
 }
-

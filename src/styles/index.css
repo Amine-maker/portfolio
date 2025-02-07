@@ -65,7 +65,7 @@ h1 {
   }
 
   h1 {
-    @apply text-secondary-700;
+    @apply text-secondary-800;
   }
 }
 
@@ -77,4 +77,3 @@ h1 {
 
 @layer components {
 }
-
