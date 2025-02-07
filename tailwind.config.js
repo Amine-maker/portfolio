@@ -96,5 +96,6 @@ export default {
     require("tailwindcss-animate"),
     require("@tailwindcss/typography"),
     "prettier-plugin-tailwindcss",
+    "postcss-import",
   ],
 };

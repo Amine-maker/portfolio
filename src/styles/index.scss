@@ -1,6 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "./reset.scss";
+@import "./variable.scss";
 
 :root {
   font-family: Inter;
@@ -61,7 +63,7 @@ h1 {
     background-color: #ffffff;
   }
   a:hover {
-    color: #747bff;
+    color: theme("colors.secondary.800");
   }
   button {
     background-color: #f9f9f9;
@@ -92,4 +94,9 @@ h1 {
 }
 
 @layer components {
+  .btn-base {
+    @apply inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md border text-sm font-medium transition-colors focus:bg-gray-800 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0;
+
+    @include shadow-light-mixin(theme("colors.primary.700"));
+  }
 }

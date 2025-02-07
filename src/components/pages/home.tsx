@@ -1,11 +1,11 @@
 import React, { PropsWithChildren } from "react";
-import Header from "../header/Header";
+import Header from "../header/header";
 
 type Props = { test?: string };
 
 const Home: React.FC<PropsWithChildren<Props>> = () => {
   return (
-    <div>
+    <div className="flex flex-col gap-8">
       <Header></Header>
     </div>
   );

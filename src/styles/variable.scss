@@ -11,30 +11,29 @@
   --primary: 0 0% 9%;
   --primary-25: 174, 100%, 96%;
   --primary-50: 174, 45%, 91%;
-  --primary-100: 174, 37%, 85%;
+  --primary-100: 130, 32%, 89%;
   --primary-200: 175, 42%, 78%;
   --primary-300: 174, 37%, 71%;
   --primary-400: 174 28% 54%;
   --primary-500: 174 23% 46%;
-  --primary-600: 175, 19%, 40%;
-  --primary-700: 175, 13%, 32%;
-  --primary-800: 173, 17%, 29%;
+  --primary-600: 132, 50%, 27%;
+  --primary-700: 133, 26%, 28%;
+  --primary-800: 132 45% 18%;
   --primary-900: 173, 21%, 24%;
   --primary-foreground: 0 0% 98%;
-  --primary-vibrant: 132, 50%, 27%;
 
   --secondary: 0 0% 96.1%;
   --secondary-25: 240, 20%, 99%;
   --secondary-50: 210, 20%, 98%;
   --secondary-100: 216, 24%, 96%;
-  --secondary-200: 220, 17%, 93%;
-  --secondary-300: 217, 16%, 84%;
-  --secondary-400: 218, 15%, 65%;
-  --secondary-500: 221, 13%, 46%;
-  --secondary-600: 216, 18%, 34%;
-  --secondary-700: 218, 24%, 27%;
-  --secondary-800: 0, 0%, 37%;
-  --secondary-900: 220, 43%, 11%;
+  --secondary-200: 0, 0%, 91%;
+  --secondary-300: 0, 0%, 85%;
+  --secondary-400: 146, 5%, 72%;
+  --secondary-500: 148, 6%, 59%;
+  --secondary-600: 145, 5%, 47%;
+  --secondary-700: 144, 5%, 40%;
+  --secondary-800: 143, 5%, 29%;
+  --secondary-900: 141, 13%, 22%;
   --secondary-foreground: 0 0% 9%;
 
   --muted: 0 0% 96.1%;
@@ -50,7 +49,7 @@
   --input: 0 0% 89.8%;
   --ring: 0 0% 3.9%;
 
-  --radius: 0.5rem;
+  --radius: 0.7rem;
 }
 .dark {
   --background: 0 0% 3.9%;

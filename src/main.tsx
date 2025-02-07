@@ -9,7 +9,7 @@ import App from "./app/App.tsx";
 createRoot(document.getElementById("root")!).render(
   <BrowserRouter>
     <App />
-    <main className="container h-full w-full border-2 border-red-800">
+    <main className="container h-full w-full border border-red-800">
       <AppRoutes />
     </main>
   </BrowserRouter>,
