@@ -6,6 +6,7 @@ export default {
     fontFamily: {
       body: ["Inter", "sans-serif"],
       sans: ["Inter", "sans-serif"],
+      display: ["Playfair", "serif"],
     },
     container: {
       center: true,
@@ -99,3 +100,4 @@ export default {
     "postcss-import",
   ],
 };
+

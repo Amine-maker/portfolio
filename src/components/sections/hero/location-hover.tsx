@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "@styles/location-hover.scss";
 import { MapPin } from "lucide-react";
 
@@ -7,7 +7,6 @@ type LocationHoverProps = {
 };
 
 const LocationHover: React.FC<LocationHoverProps> = ({ anchorElement }) => {
-  const tooltipRef = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState<{ top: number; left: number }>({
     top: 0,
     left: 0,
@@ -15,12 +14,8 @@ const LocationHover: React.FC<LocationHoverProps> = ({ anchorElement }) => {
 
   useEffect(() => {
     const updatePosition = () => {
-      if (anchorElement.current && tooltipRef.current) {
+      if (anchorElement.current) {
         const anchorRect = anchorElement.current.getBoundingClientRect();
-        console.log(anchorElement.current.getBoundingClientRect().x);
-
-        const tooltipRect = tooltipRef.current.getBoundingClientRect();
-
         setPosition({
           top: anchorRect.y - 100,
           left: anchorRect.x - 35,
@@ -36,7 +31,6 @@ const LocationHover: React.FC<LocationHoverProps> = ({ anchorElement }) => {
   return (
     <div
       className="location-card"
-      ref={tooltipRef}
       style={{ top: position.top, left: position.left, position: "fixed" }}
     >
       <div className="cloud"></div>
@@ -66,3 +60,4 @@ const LocationHover: React.FC<LocationHoverProps> = ({ anchorElement }) => {
 };
 
 export default LocationHover;
+

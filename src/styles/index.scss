@@ -1,8 +1,9 @@
+@use "./reset.scss" as *;
+@use "./variable.scss" as *;
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import "./reset.scss";
-@import "./variable.scss";
 
 :root {
   font-family: Inter;
@@ -22,6 +23,26 @@
 #root {
   width: 100%;
   height: 100dvh;
+}
+
+@font-face {
+  font-family: "Playfair";
+  src: url("../assets/font/playfair/PlayfairDisplay-VariableFont_wght.ttf")
+    format("truetype-variations");
+  src: url("../assets/font/playfair/PlayfairDisplay-VariableFont_wght.ttf") format("truetype")
+    tech("variations");
+  font-weight: 400 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Playfair";
+  src: url("../assets/font/playfair/PlayfairDisplay-Italic-VariableFont_wght.ttf")
+    format("truetype-variations");
+  src: url("../assets/font/playfair/PlayfairDisplay-Italic-VariableFont_wght.ttf")
+    format("truetype") tech("variations");
+  font-weight: 400 900;
+  font-style: italic;
 }
 
 @font-face {
@@ -52,7 +73,7 @@ body {
 }
 
 h1 {
-  font-size: 2.2em;
+  font-size: 2.4em;
   font-weight: bold;
   line-height: 1.3;
 }
@@ -81,6 +102,10 @@ h1 {
   h1 {
     @apply text-secondary-900;
   }
+
+  a {
+    @apply text-sm text-primary-800 hover:text-primary-900;
+  }
 }
 
 @layer utilities {
@@ -100,3 +125,4 @@ h1 {
     @include shadow-light-mixin(theme("colors.primary.700"));
   }
 }
+

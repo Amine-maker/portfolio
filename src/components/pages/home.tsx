@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import Header from "../header/header";
+import Header from "../sections/hero/header";
 
 type Props = { test?: string };
 
@@ -12,3 +12,4 @@ const Home: React.FC<PropsWithChildren<Props>> = () => {
 };
 
 export default Home;
+

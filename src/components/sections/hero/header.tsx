@@ -1,9 +1,15 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import logoOcapiat from "@images/logo-ocapiat.png";
 import LocationHover from "./location-hover";
+import { LINK_MAPS_OPAPIAT } from "@/lib/contante";
 
 export default function Header() {
   const textRef = useRef(null);
+
+  const handleRedirectToMaps = () => {
+    return window.open(LINK_MAPS_OPAPIAT);
+  };
+
   return (
     <section className="header flex flex-col gap-12">
       <div className="pl-8 pt-20">
@@ -17,18 +23,22 @@ export default function Header() {
         </h1>
         <h1 className="">
           basé à{" "}
-          <span ref={textRef} className="hover-card relative italic text-primary-600">
+          <span
+            onClick={() => handleRedirectToMaps()}
+            ref={textRef}
+            className="hover-card relative cursor-pointer italic text-primary-600"
+          >
             Paris
           </span>
-          , France
+          <span>, France</span>
         </h1>
       </div>
       <div className="reference">
         <LocationHover anchorElement={textRef} />
       </div>
 
-      <div className="flex h-20 w-full items-center justify-between border border-red-500 px-6">
-        <div className="flex gap-3">
+      <div className="flex h-20 w-full items-center justify-between border border-red-500 px-6 font-semibold">
+        <div className="flex gap-8">
           <div>
             <a href="">Linkedin</a>
           </div>
@@ -39,8 +49,9 @@ export default function Header() {
             <a href="">cv</a>
           </div>
         </div>
-        <div>Sporify</div>
+        <div className="text-sm">Sporify</div>
       </div>
     </section>
   );
 }
+
