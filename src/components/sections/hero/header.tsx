@@ -2,6 +2,7 @@ import { useRef } from "react";
 import logoOcapiat from "@images/logo-ocapiat.png";
 import LocationHover from "./location-hover";
 import { LINK_MAPS_OPAPIAT } from "@/lib/contante";
+import { ProLinks } from "@/data/links";
 
 export default function Header() {
   const textRef = useRef(null);
@@ -37,21 +38,18 @@ export default function Header() {
         <LocationHover anchorElement={textRef} />
       </div>
 
-      <div className="flex h-20 w-full items-center justify-between border border-red-500 px-6 font-semibold">
+      <div className="flex h-20 w-full items-center justify-between px-6 font-semibold">
         <div className="flex gap-8">
-          <div>
-            <a href="">Linkedin</a>
-          </div>
-          <div>
-            <a href="">Github</a>
-          </div>
-          <div>
-            <a href="">cv</a>
-          </div>
+          {ProLinks.map((link) => {
+            return (
+              <div key={link.href}>
+                <a href={link.href}>{link.label}</a>
+              </div>
+            );
+          })}
         </div>
         <div className="text-sm">Sporify</div>
       </div>
     </section>
   );
 }
-

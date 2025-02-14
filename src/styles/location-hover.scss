@@ -13,7 +13,7 @@
     transform-origin: 50% 100%;
     border-radius: 18px;
     box-shadow:
-      0 0 0 2px #b0dbbf,
+      0 0 0 2px #181818,
       1px 4px 5px 4px #ededed54;
     padding: 2px;
     animation-duration: 0.3s;
@@ -23,7 +23,7 @@
 
   .bg-location-card {
     @apply absolute left-0 top-0 z-0 size-full bg-cover bg-no-repeat;
-    background-image: url("/src/assets/images/location_repr_logo.png");
+    background-image: url("/src/assets/images/loca_gray.png");
     background-position: 15px -32px;
   }
 
@@ -50,13 +50,13 @@
 }
 
 .details-blur {
-  @apply z-10 bg-primary-100;
+  @apply z-10 bg-[#bdbdbd];
   top: 35px;
   width: 110%;
   margin-bottom: -10%;
   margin-top: -12%;
   flex: 1 1 0;
-  filter: blur(6px);
+  filter: blur(10px);
 }
 
 .details {
@@ -67,23 +67,23 @@
 }
 
 h2.title-card {
-  @apply text-primary-600;
+  @apply text-white;
   font-size: 0.9rem;
   margin-bottom: 2px;
 }
 
 p.text-card {
-  @apply font-semibold text-primary-700;
+  @apply font-semibold text-gray-100;
   font-size: 0.7rem;
 }
 
 .inner-card {
-  @apply relative size-full overflow-hidden border-2 border-gray-400 bg-primary-100;
+  @apply relative size-full overflow-hidden border-2 border-gray-400 bg-[#e5e3df];
   border-radius: calc(18px - 2%);
 }
 
 .blur-item {
-  @apply left-0 top-0 -z-10 h-[110%] min-w-16 bg-primary-100 blur-md;
+  @apply left-0 top-0 -z-10 h-[110%] min-w-16 bg-[#bdbdbd] blur-md;
 }
 
 .cloud:nth-child(1) {
