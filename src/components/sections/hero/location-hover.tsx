@@ -22,8 +22,10 @@ const LocationHover: React.FC<LocationHoverProps> = ({ anchorElement }) => {
         });
       }
     };
+
     updatePosition();
     window.addEventListener("resize", updatePosition);
+    window.addEventListener("scroll", updatePosition);
 
     return () => window.removeEventListener("resize", updatePosition);
   }, [anchorElement]);
@@ -60,4 +62,3 @@ const LocationHover: React.FC<LocationHoverProps> = ({ anchorElement }) => {
 };
 
 export default LocationHover;
-

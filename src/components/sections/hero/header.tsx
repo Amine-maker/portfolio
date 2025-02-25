@@ -13,7 +13,7 @@ export default function Header() {
 
   return (
     <section className="header flex flex-col gap-12">
-      <div className="pl-8 pt-20">
+      <div className="pl-6 pt-20">
         <h1>Amine Djennadi</h1>
         <h1 className="flex flex-wrap items-center gap-2">
           développeur web chez
@@ -43,12 +43,14 @@ export default function Header() {
           {ProLinks.map((link) => {
             return (
               <div key={link.href}>
-                <a href={link.href}>{link.label}</a>
+                <a className="text-black" href={link.href}>
+                  {link.label}
+                </a>
               </div>
             );
           })}
         </div>
-        <div className="text-sm">Sporify</div>
+        <div className="text-sm text-black">Sporify</div>
       </div>
     </section>
   );
