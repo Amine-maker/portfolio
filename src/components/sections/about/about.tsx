@@ -1,7 +1,7 @@
 import React from "react";
 import Stack from "./stack";
 
-export const About: React.FC = () => {
+const About: React.FC = () => {
   return (
     <section className="p-6">
       <div className="flex flex-col gap-6">
@@ -28,3 +28,5 @@ export const About: React.FC = () => {
     </section>
   );
 };
+
+export default About;
