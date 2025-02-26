@@ -116,6 +116,11 @@ h1 {
   .img-icon {
     @include shadow-light-mixin(#b9b9b93d);
   }
+
+  .tooltip-item[data-state="delayed-open"],
+  .tooltip-item[data-state="open"] {
+    animation-name: coolfadeIn;
+  }
 }
 
 @layer components {
@@ -126,14 +131,16 @@ h1 {
   }
 }
 
-
-
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
+@keyframes coolfadeIn {
+  0% {
+    filter: brightness(1) blur(12px);
   }
-  body {
-    @apply bg-background text-foreground;
+
+  10% {
+    filter: brightness(1) blur(20px);
+  }
+
+  100% {
+    filter: brightness(1) blur(0px);
   }
 }
-

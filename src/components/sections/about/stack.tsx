@@ -1,14 +1,8 @@
 import React, { PropsWithChildren, ReactNode, useRef } from "react";
 
-import * as Tooltip from "@radix-ui/react-tooltip";
-import {
-  MotionValue,
-  animate,
-  motion,
-  useMotionValue,
-  useSpring,
-  useTransform,
-} from "framer-motion";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+
+import { MotionValue, motion, useMotionValue, useSpring, useTransform } from "motion/react";
 
 type StackProps = {} & PropsWithChildren;
 
@@ -22,13 +16,13 @@ const Stack: React.FC<StackProps> = ({ children }) => {
   );
 };
 
-const SCALE = 2.25; // max scale factor of an icon
-const DISTANCE = 110; // pixels before mouse affects an icon
-const NUDGE = 40; // pixels icons are moved away from mouse
+const SCALE = 1.8; // max scale factor of an icon
+const DISTANCE = 120; // pixels before mouse affects an icon
+const NUDGE = 30; // pixels icons are moved away from mouse
 const SPRING = {
-  mass: 0.1,
+  mass: 0.5,
   stiffness: 170,
-  damping: 12,
+  damping: 11,
 };
 const APPS = ["Safari", "Mail", "Messages", "Photos", "Notes", "Calendar", "Reminders", "Music"];
 
@@ -57,7 +51,7 @@ export function Dock() {
         className="relative mx-auto hidden h-16 items-end gap-3 px-2 pb-3 sm:flex"
       >
         <motion.div
-          className="absolute inset-y-0 -z-10 rounded-2xl border border-gray-600 bg-gray-700"
+          className="absolute inset-y-0 -z-10"
           style={{ left: leftSpring, right: rightSpring }}
         />
 
@@ -111,36 +105,23 @@ function AppIcon({ mouseLeft, children }: { mouseLeft: MotionValue; children: Re
   const y = useMotionValue(0);
 
   return (
-    <Tooltip.Provider delayDuration={0}>
-      <Tooltip.Root>
-        <Tooltip.Trigger asChild>
+    <TooltipProvider delayDuration={0}>
+      <Tooltip>
+        <TooltipTrigger asChild>
           <motion.button
             ref={ref}
             style={{ x: xSpring, scale: scaleSpring, y }}
-            onClick={() => {
-              animate(y, [0, -40, 0], {
-                repeat: 2,
-                ease: [
-                  [0, 0, 0.2, 1],
-                  [0.8, 0, 1, 1],
-                ],
-                duration: 0.7,
-              });
-            }}
-            className="block aspect-square w-10 origin-bottom rounded-full bg-white shadow"
+            className="tooltip-item block aspect-square w-10 origin-bottom rounded-lg bg-black shadow"
           />
-        </Tooltip.Trigger>
-        <Tooltip.Portal>
-          <Tooltip.Content
-            sideOffset={10}
-            className="rounded border border-gray-600 bg-gray-700 px-2 py-1.5 text-sm font-medium text-white shadow shadow-black"
-          >
-            {children}
-            <Tooltip.Arrow />
-          </Tooltip.Content>
-        </Tooltip.Portal>
-      </Tooltip.Root>
-    </Tooltip.Provider>
+        </TooltipTrigger>
+        <TooltipContent
+          sideOffset={10}
+          className="rounded-md border border-gray-600 bg-gray-700 px-2 py-1.5 text-sm font-medium text-white shadow shadow-black"
+        >
+          {children}
+        </TooltipContent>
+      </Tooltip>
+    </TooltipProvider>
   );
 }
 
